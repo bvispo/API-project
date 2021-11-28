@@ -16,8 +16,13 @@ def speakers():
     return jsonify(persons)
 
 @app.route("/frases/<name>")
-def frases(name):
-    frases = mt.text(name)
+def quotes_names(name):
+    frases = f"{name} says {mt.quotes(name)[0]}"
+    return jsonify(frases)
+
+@app.route("/frase/<episode>")
+def quotes_episode(quote):
+    frases = f"In {quote} is this quote: {mt.episodios(quote)}"
     return jsonify(frases)
 
 

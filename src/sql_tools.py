@@ -1,9 +1,7 @@
 import pandas as pd
 import sqlalchemy as alch
 from getpass import getpass
-import pymysql 
-import sys
-#from configuration.configuration import engine
+from configuration.configuration import engine
 
 def check(que,string):
     """
