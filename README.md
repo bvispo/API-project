@@ -23,6 +23,7 @@ resource_URL = http://127.0.0.1:5000/
 ### ENDPOINTS GET
 
 1. /personajes
+
 This endpoint returns a json containing the main characters of the show.
 ```
 url = http://127.0.0.1:5000/personajes
@@ -46,6 +47,7 @@ url = http://127.0.0.1:5000/personajes
 ```
 
 2. /frases/<name>
+
 This endpoint returns random quotes of a given character.
 ```
 user = Pam
@@ -56,6 +58,7 @@ requests.get(url, user)
 
 
 3. /frase/<episodio>
+
 This endpoint returns a random quote of a given episode.
 ```
 episode = 4x6
@@ -67,6 +70,7 @@ requests.get(url, episode)
 ### ENDPOINT POST:
 
 1. /nuevafrase
+
 This endpoint creates a new quote for an existent character in de sql database.
 It needs to recive the data from a dicctionary.
 You can insert a quote like this:
@@ -77,6 +81,7 @@ requests.post(url_nuevafrase, data=insertar)
 ```
 
 2. /borrafrase
+
 This endpoint delates a quote from the sql database.
 You can delate a quote like this:
 ```
@@ -88,6 +93,7 @@ requests.post(url_delate, data=text_to_delate)
 ### ENDPOINT SENTIMENTAL ANALYSIS:
 
 1. /sentimientos/<name>
+
 This endpoint makes a sentiment analysis, taking all the quotes of a given character in the tv show.
 ```
 user = Pam
