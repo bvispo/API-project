@@ -1,10 +1,10 @@
 # API-project
-
+![foto](https://github.com/bvispo/API-project/blob/main/images/the-office.jpg)
 
 The objetive of this project is to create our own API trough web-scrapping and querying databases for data.
 
 In order to get the data, I have used a Kaggle dataset that compiles the script from the 9 seasons of the tv show The office.
-Data available at: [The office Database](https://www.kaggle.com/nehaprabhavalkar/the-office-dataset)
+- Data available at: [The Office Database](https://www.kaggle.com/nehaprabhavalkar/the-office-dataset)
 
 ## The API
 
@@ -18,8 +18,8 @@ Currently there is no authentication needed. You just need to establish the conn
 
 1. personajes
 This endpoint returns a json containing the main characters of the show.
-Example Resource URL: http://127.0.0.1:5000/personajes
-Example Response:
+- Example Resource URL: http://127.0.0.1:5000/personajes
+- Example Response:
 [
   {
     "nombre": "Jim"
@@ -37,14 +37,14 @@ Example Response:
 
 2. frases/<name>
 This endpoint returns random quotes of a given character.
-Example Resource URL: http://127.0.0.1:5000/frases/Pam
-Example Response:
+- Example Resource URL: http://127.0.0.1:5000/frases/Pam
+- Example Response:
 "Pam says ('Yeah`turn signal. It`s exciting to be painting again`those are the wipers. So`the`its`just. There you go! Yeah. [chuckles]  Yeah, things get so busy with the kids`red light`that it`s nice to have that creative outlet`red light! Red light! Red! Red!',)"
 
 3. frase/<episodio>
 This endpoint returns a random quote of a given episode.
-Example Resource URL: http://127.0.0.1:5000/frase/4x6
-Example Response:
+- Example Resource URL: http://127.0.0.1:5000/frase/4x6
+- Example Response:
 'La frase del capítulo 4x6': 'My hip bone!'
 
 ### ENDPOINT .POST:
