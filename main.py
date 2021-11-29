@@ -1,9 +1,9 @@
 from os import name
 from flask import Flask, request, jsonify
-import src.main_tools as mt
+from sqlalchemy.sql.expression import text
+import tools.main_tools as mt
 import random
-
-from src.tools.main_tools import personajes
+from tools.main_tools import personajes
 
 
 app = Flask(__name__)
@@ -28,24 +28,19 @@ def quotes_episode(episodio):
     frases = mt.episodios(episodio)
     return jsonify(frases)
 
-@app.route("/nuevafrase/<episode>/<speaker>/<text>", methods=["POST"])
+@app.route("/nuevafrase", methods=["POST"])
 def insertamensaje():
     episodio = request.form.get("episode")
     personaje = request.form.get("speaker")
     texto = request.form.get("text")
-    # PODRÍAMOS LLAMAR A FUNCIONES CHECK
+
     print(episodio, personaje, texto)
 
     return mt.nuevomensaje(episodio,personaje,texto)
 
-
-
-
-
-
-
-
-
+@app.route("/borrafrase",  methods=["POST"])
+def borrar():
+    return mt.borramensaje(text)
 
 
 

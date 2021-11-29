@@ -1,4 +1,4 @@
-from src.config.configuration import engine
+from config.configuration import engine
 import pandas as pd
 import random
 
@@ -25,10 +25,19 @@ def episodios(episodio):
 
 
 def nuevomensaje(episode,speaker,text):
-
     engine.execute(f"""
     INSERT INTO text (episode_idepisode, speaker_idspeaker,text)
-    VALUES ({episode}, '{speaker}', '{text}');
+    VALUES ({episode}, {speaker}, '{text}');
     """)
     
     return f"Se ha introducido correctamente: {episode} {speaker} {text}"
+
+def borramensaje(text):
+    engine.execute(f"""
+    SELECT text FROM api.text WHERE text= '{text}';""")
+    
+    engine.execute(f"""
+    DELETE FROM api.text where text= '{text}';""")
+
+    return "The text has been deleted"
+

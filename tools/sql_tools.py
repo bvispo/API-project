@@ -4,10 +4,8 @@ import os
 import sqlalchemy as alch
 from getpass import getpass
 
-import sys
-sys.path.append('../')
 
-from src.config.configuration import engine 
+from config.configuration import engine 
 
 
 def sustituye(x):
