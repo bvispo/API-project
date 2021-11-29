@@ -32,6 +32,7 @@ def nuevomensaje(episode,speaker,text):
     
     return f"Se ha introducido correctamente: {episode} {speaker} {text}"
 
+
 def borramensaje(text):
     engine.execute(f"""
     SELECT text FROM api.text WHERE text= '{text}';""")
