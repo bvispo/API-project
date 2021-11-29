@@ -13,7 +13,7 @@ def inicio():
     """
     This function initializes the API.
     """
-    return "The office"
+    return "Welcome to The Office Show API"
 
 # ENDPOINTS GET:
 
