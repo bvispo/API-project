@@ -25,6 +25,7 @@ Currently there is no authentication needed. You just need to establish the conn
 This endpoint returns a json containing the main characters of the show.
 - Example Resource URL: http://127.0.0.1:5000/personajes
 - Example Response:
+```
 [
   {
     "nombre": "Jim"
@@ -39,11 +40,14 @@ This endpoint returns a json containing the main characters of the show.
     "nombre": "Pam"
   }
 ]
+```
 
 2. /frases/<name>
 This endpoint returns random quotes of a given character.
+
 - Example Resource URL: http://127.0.0.1:5000/frases/Pam
 - Example Response: "Pam says ('We can do that.',)"
+
 
 3. /frase/<episodio>
 This endpoint returns a random quote of a given episode.
@@ -57,6 +61,13 @@ This endpoint creates a new quote for an existent character in de sql database.
 It needs to recive the data in a dicctionary. 
 - Example: insertar = {"episode": 1, "speaker":3, "text": "Hello"}
 - Example Resource URL: http://127.0.0.1:5000/nuevafrase
+
+````
+insertar = {"episode": 1, "speaker":3, "text": "hello"}
+url_nuevafrase = "http://127.0.0.1:5000/nuevafrase"
+requests.post(url_nuevafrase, data=insertar)
+```
+
 
 2. /borrafrase
 This endpoint delates a quote from the sql database.
