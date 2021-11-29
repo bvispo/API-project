@@ -15,15 +15,18 @@ Welcome to The Office API. Using this service, you can get the main characters o
 Currently there is no authentication needed. You just need to establish the connection to the sql database.
 
 ### Starting the API
-
-- Resource URL: http://127.0.0.1:5000/
-- Response: Welcome to The Office Show API.
+```
+resource_URL = http://127.0.0.1:5000/
+```
+- Expected response: Welcome to The Office Show API.
 
 ### ENDPOINTS GET
 
 1. /personajes
 This endpoint returns a json containing the main characters of the show.
-- Example Resource URL: http://127.0.0.1:5000/personajes
+```
+url = http://127.0.0.1:5000/personajes
+```
 - Example Response:
 ```
 [
@@ -44,41 +47,53 @@ This endpoint returns a json containing the main characters of the show.
 
 2. /frases/<name>
 This endpoint returns random quotes of a given character.
-
-- Example Resource URL: http://127.0.0.1:5000/frases/Pam
-- Example Response: "Pam says ('We can do that.',)"
+```
+user = Pam
+url= "http://127.0.0.1:5000/frases/user"
+requests.get(url, user)
+```
+- Example Response: "Pam says ('We can do that.')"
 
 
 3. /frase/<episodio>
 This endpoint returns a random quote of a given episode.
-- Example Resource URL: http://127.0.0.1:5000/frase/4x6
+```
+episode = 4x6
+url = "http://127.0.0.1:5000/frase/episode"
+requests.get(url, episode)
+```
 - Example Response: 'La frase del capítulo 4x6': 'My hip bone!'
 
 ### ENDPOINT POST:
 
 1. /nuevafrase
 This endpoint creates a new quote for an existent character in de sql database.
-It needs to recive the data in a dicctionary. 
-- Example: insertar = {"episode": 1, "speaker":3, "text": "Hello"}
-- Example Resource URL: http://127.0.0.1:5000/nuevafrase
-
-````
+It needs to recive the data from a dicctionary.
+You can insert a quote like this:
+```
 insertar = {"episode": 1, "speaker":3, "text": "hello"}
-url_nuevafrase = "http://127.0.0.1:5000/nuevafrase"
+url_nueva_frase = "http://127.0.0.1:5000/nuevafrase"
 requests.post(url_nuevafrase, data=insertar)
 ```
 
-
 2. /borrafrase
 This endpoint delates a quote from the sql database.
-- Example: text = "Hello"
-- Example Resource URL: http://127.0.0.1:5000/borrafrase
+You can delate a quote like this:
+```
+text_to_delate = "Hello
+url_delate = "http://127.0.0.1:5000/borrafrase"
+requests.post(url_delate, data=text_to_delate)
+```
 
 ### ENDPOINT SENTIMENTAL ANALYSIS:
 
 1. /sentimientos/<name>
 This endpoint makes a sentiment analysis, taking all the quotes of a given character in the tv show.
-- Example Resource URL: http://127.0.0.1:5000/sentimientos/Pam
+```
+user = Pam
+url = "http://127.0.0.1:5000/sentimientos/user"
+requests.get(url, user)
+```
 - Example Response for Pam: 0.18761301369863015
 
 
