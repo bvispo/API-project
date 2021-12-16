@@ -104,20 +104,20 @@ requests.get(url, user)
 
 
 ## Libraries
-[import requests](https://pypi.org/project/requests/2.7.0/)
+[requests](https://pypi.org/project/requests/2.7.0/)
 
-[import pandas as pd](https://pandas.pydata.org/)
+[pandas](https://pandas.pydata.org/)
 
-[import numpy as np](https://numpy.org/doc/)
+[numpy](https://numpy.org/doc/)
 
-[import flask](https://flask.palletsprojects.com/en/2.0.x/)
+[flask](https://flask.palletsprojects.com/en/2.0.x/)
 
-[import random](https://docs.python.org/3/library/random.html)
+[random](https://docs.python.org/3/library/random.html)
 
-[import sqlalchemy](https://docs.sqlalchemy.org/en/14/)
+[sqlalchemy](https://docs.sqlalchemy.org/en/14/)
 
-[import sys](https://docs.python.org/3/library/sys.html)
+[sys](https://docs.python.org/3/library/sys.html)
 
-[import spacy](https://spacy.io/api/doc)
+[spacy](https://spacy.io/api/doc)
 
-[import nltk](https://www.nltk.org/)
+[nltk](https://www.nltk.org/)
